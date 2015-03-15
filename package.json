@@ -33,14 +33,6 @@
     "through2": "*",
     "gulp-util": "~2.2.0"
   },
-  "devDependencies": {
-    "mocha": "*",
-    "coveralls": "*",
-    "mocha-lcov-reporter": "*",
-    "istanbul": "*",
-    "event-stream": "*",
-    "should": "~2.1.0"
-  },
   "engines": {
     "node": ">=0.8.0",
     "npm": ">=1.2.10"
