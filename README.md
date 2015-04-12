@@ -1,5 +1,9 @@
 # gulp-wp-rev
-[![NPM version][npm-image]][npm-url]
+<p align="left">
+  <a href="https://www.npmjs.com/package/gulp-wp-rev"><img src="https://img.shields.io/npm/v/gulp-wp-rev.svg?style=flat-square"></a>
+  <a href="https://github.com/raulghm/gulp-wp-rev/stargazers"><img src="http://img.shields.io/npm/dm/gulp-wp-rev.svg?style=flat-square"></a>
+</p>
+
 
 > gulp-wp-rev plugin for [gulp](https://github.com/wearefractal/gulp)
 
