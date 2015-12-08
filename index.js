@@ -32,19 +32,21 @@ module.exports = function(options) {
 		// check if file.contents is a `Buffer`
 		if (file.isBuffer()) {
 
-			file.contents = new Buffer(String(file.contents));
+			file.contents = new Buffer(String(file.contents));			
+                        
+			if (o.css && o.cssHandle) {
+				var regexCss = new RegExp("(wp_enqueue_style\\('" + o.cssHandle + "',(\\s*[^,]+,){2})\\s*[^\\)]+\\);");
+				var hashCss = md5(o.css);
+				file.contents = new Buffer(String(file.contents).replace(regexCss, "$1 '" + hashCss + "');"));
+			}
 
-			var regexCss = new RegExp("(wp_enqueue_style\\('" + o.cssHandle + "',(\\s*[^,]+,){2})\\s*[^\\)]+\\);");
-			var regexJs = new RegExp("(wp_register_script\\('" + o.jsHandle + "',(\\s*[^,]+,){2})\\s*[^\\)]+\\);");
-
-			var hashCss = md5(o.css);
-			var hashJs = md5(o.js);
-
-			file.contents = new Buffer(String(file.contents).replace(regexCss, "$1 '" + hashCss + "');"));
-			file.contents = new Buffer(String(file.contents).replace(regexJs, "$1 '" + hashJs + "');"));
+			if (o.js && o.jsHandle) {
+				var regexJs = new RegExp("(wp_register_script\\('" + o.jsHandle + "',(\\s*[^,]+,){2})\\s*[^\\)]+\\);");
+				var hashJs = md5(o.js);
+				file.contents = new Buffer(String(file.contents).replace(regexJs, "$1 '" + hashJs + "');"));
+			}			
 
 			this.push(file);
-
 		}
 		return callback();
 	}
