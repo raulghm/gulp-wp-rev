@@ -1,6 +1,6 @@
 {
   "name": "gulp-wp-rev",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Revisioning JS and CSS to scripts.php file on wordpress assets",
   "keywords": [
     "gulpplugin",
