@@ -1,6 +1,3 @@
-
-
-
 <?php
 /**
  * Enqueue scripts and stylesheets
