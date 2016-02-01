@@ -8,7 +8,7 @@
 
 Revisioning CSS/JS appending a hash in you assets of wordpress theme.
 
-`styles.css?ver=1` → `styles?ver=bd0622b828f9346876088cd617566fa5`
+`styles.css?ver=1` → `styles.css?ver=bd0622b828f9346876088cd617566fa5`
 
 <img src="example/demo.gif" alt="demo">
 
@@ -25,7 +25,7 @@ Then, add it to your `gulpfile.js`:
 ```javascript
 var wpRev = require('gulp-wp-rev');
 
-gulp.task('rev', function () {
+gulp.task('rev', function() {
 	gulp.src('./wp-content/themes/raulghm-theme/lib/scripts.php')
 	.pipe(wpRev({
 		css: 'src/styles/styles.css',
