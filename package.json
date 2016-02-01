@@ -1,7 +1,23 @@
 {
   "name": "gulp-wp-rev",
-  "version": "0.1.0",
-  "description": "Revisioning JS and CSS to scripts.php file on wordpress assets",
+  "version": "0.2.0",
+  "description": "Revisioning CSS/JS appending a hash in you assets of wordpress theme",
+  "license": "MIT",
+  "repository": "raulghm/gulp-wp-rev",
+  "author": {
+    "name": "raulghm",
+    "email": "raulghm@gmail.com",
+    "url": "https://github.com/raulghm"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "gulpplugin",
     "wordpress"
@@ -14,32 +30,13 @@
     "cache",
     "expire",
     "static",
-    "asset",
     "assets"
   ],
-  "homepage": "https://github.com/raulghm/gulp-wp-rev",
-  "bugs": "https://github.com/raulghm/gulp-wp-rev/issues",
-  "author": {
-    "name": "Raul Hernandez",
-    "email": "raulghm@gmail.com",
-    "url": "https://github.com/raulghm"
-  },
-  "main": "./index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/raulghm/gulp-wp-rev.git"
-  },
   "dependencies": {
-    "through2": "*",
-    "gulp-util": "~2.2.0"
+    "gulp-util": "^3.0.1",
+    "through2": "^0.6.3"
   },
-  "engines": {
-    "node": ">=0.8.0",
-    "npm": ">=1.2.10"
-  },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ]
+  "devDependencies": {
+    "mocha": "*"
+  }
 }
