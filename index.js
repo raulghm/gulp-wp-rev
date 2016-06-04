@@ -29,13 +29,13 @@ module.exports = function (options) {
 			file.contents = new Buffer(String(file.contents));
 
 			if (options.css && options.cssHandle) {
-				var regexCss = new RegExp("(wp_enqueue_style\\('" + options.cssHandle + "',(\\s*[^,]+,){2})\\s*[^\\)]+\\);");
+				var regexCss = new RegExp("(wp_(?:register|enqueue)_style\\(\\s?'" + options.cssHandle + "',(\\s*[^,]+,){2})\\s*[^\\)]+\\);");
 				var hashCss = md5(options.css);
 				file.contents = new Buffer(String(file.contents).replace(regexCss, "$1 '" + hashCss + "');"));
 			}
 
 			if (options.js && options.jsHandle) {
-				var regexJs = new RegExp("(wp_register_script\\('" + options.jsHandle + "',(\\s*[^,]+,){2})\\s*[^\\)]+\\);");
+				var regexJs = new RegExp("(wp_(?:register|enqueue)_script\\(\\s?'" + options.jsHandle + "',(\\s*[^,]+,){2})\\s*[^\\)]+\\);");
 				var hashJs = md5(options.js);
 				file.contents = new Buffer(String(file.contents).replace(regexJs, "$1 '" + hashJs + "');"));
 			}
