@@ -35,7 +35,7 @@ module.exports = function (options) {
 			}
 
 			if (options.js && options.jsHandle) {
-				var regexJs = new RegExp("(wp_(?:register|enqueue)_script\\(\\s?'" + options.jsHandle + "',(\\s*[^,]+,){2})\\s*[^,]+(,\\s*[^\\)]+)?\\);");
+				var regexJs = new RegExp("(wp_(?:register|enqueue)_script\\(\\s?'" + options.jsHandle + "',(\\s*[^,]+,\\s*.+,))\\s*'[a-zA-Z0-9]+'\\s*(,\\s*[^\\)]+)?\\);");
 				var hashJs = md5(options.js);
 				file.contents = new Buffer(String(file.contents).replace(regexJs, "$1 '" + hashJs + "'$3);"));
 			}
