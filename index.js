@@ -28,16 +28,25 @@ module.exports = function (options) {
 
 			file.contents = new Buffer(String(file.contents));
 
-			if (options.css && options.cssHandle) {
-        var regexCss = new RegExp("(wp_(?:register|enqueue)_style\\(\\s?'" + options.cssHandle + "',(\\s*[^,]+,){2})\\s*[^,]+(,\\s*[^\\)]+)?\\);");
-				var hashCss = md5(options.css);
-				file.contents = new Buffer(String(file.contents).replace(regexCss, "$1 '" + hashCss + "'$3);"));
-			}
-
-			if (options.js && options.jsHandle) {
-				var regexJs = new RegExp("(wp_(?:register|enqueue)_script\\(\\s?'" + options.jsHandle + "',(\\s*[^,]+,){2})\\s*[^,]+(,\\s*[^\\)]+)?\\);");
-				var hashJs = md5(options.js);
-				file.contents = new Buffer(String(file.contents).replace(regexJs, "$1 '" + hashJs + "'$3);"));
+			if (options && options.length > 0) {
+				for (var i = 0; i < options.length; i++) {
+					if (options[ i ].file && options[ i ].handle && options[ i ].type) {
+						switch (options[ i ].type) {
+							case 'css':
+								var regexCss = new RegExp("(wp_(?:register|enqueue)_style\\(\\s?'" + options[ i ].handle + "',(\\s*[^,]+,){2})\\s*[^,]+(,\\s*[^\\)]+)?\\);");
+								var hashCss = md5(options[ i ].file);
+								file.contents = new Buffer(String(file.contents).replace(regexCss, "$1 '" + hashCss + "'$3);"));
+								break;
+							case 'js':
+								var regexJs = new RegExp("(wp_(?:register|enqueue)_script\\(\\s?'" + options[ i ].handle + "',(\\s*[^,]+,\\s*.+,))\\s*'[a-zA-Z0-9]+'\\s*(,\\s*[^\\)]+)?\\);");
+								var hashJs = md5(options[ i ].file);
+								file.contents = new Buffer(String(file.contents).replace(regexJs, "$1 '" + hashJs + "'$3);"));
+								break;
+							default:
+								break;
+						}
+					}
+				}
 			}
 
 			this.push(file);
