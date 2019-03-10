@@ -4,7 +4,7 @@
   <a href="https://github.com/raulghm/gulp-wp-rev/stargazers"><img src="http://img.shields.io/npm/dm/gulp-wp-rev.svg?style=flat-square"></a>
 </p>
 
-> gulp-wp-rev plugin for [gulp](https://github.com/wearefractal/gulp)
+> gulp-wp-rev plugin for [gulp](https://github.com/gulpjs/gulp)
 
 Revisioning CSS/JS appending a hash in you assets of wordpress theme.
 
