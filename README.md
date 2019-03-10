@@ -27,12 +27,23 @@ var wpRev = require('gulp-wp-rev');
 
 gulp.task('rev', function() {
 	gulp.src('./wp-content/themes/raulghm-theme/lib/scripts.php')
-	.pipe(wpRev({
-		css: 'src/styles/styles.css',
-		cssHandle: 'my_assets',
-		js: 'src/scripts/scripts.js',
-		jsHandle: 'my_assets'
-	}))
+	.pipe(wpRev([
+		{
+			handle: 'my-styles',
+			file: './style.css',
+			type: 'css'
+		},
+		{
+			handle: 'vendor-scripts',
+			file: './vendor.js',
+			type: 'js'
+		},
+		{
+			handle: 'my-scripts',
+			file: './scripts.js',
+			type: 'js'
+		},
+	]))
 	.pipe(gulp.dest('./wp-content/themes/raulghm-theme/lib'));
 });
 ```
@@ -41,25 +52,25 @@ gulp.task('rev', function() {
 
 ### wp-rev(options)
 
-#### options.css
+#### options
+Type: `Array` of `Object`s. 
+
+Each object describes a resource and has three attributes:
+
+#### options[*].handle
 Type: `String`  
 
-css source file
+Name used as the handle in WordPress
 
-#### options.js
+#### options[*].file
 Type: `String`  
 
-js source file
+Name of the file source.
 
-#### options.cssHandle
+#### options[*].type
 Type: `String`  
 
-Name used as a handle for the stylesheet.
-
-#### options.jsHandle
-Type: `String`  
-
-Name used as a handle for the javascript.
+Type of resource, either `js` or `css`.
 
 
 ## License
