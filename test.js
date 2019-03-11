@@ -3,7 +3,7 @@ var assert = require('assert');
 var gutil = require('gulp-util');
 var wpRev = require('./');
 
-it('should ', function (cb) {
+it('should write unicorns', function (cb) {
 	var stream = wpRev();
 
 	stream.on('data', function (file) {
