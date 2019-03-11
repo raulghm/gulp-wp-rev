@@ -1,6 +1,6 @@
 {
   "name": "gulp-wp-rev",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Revisioning CSS/JS appending a hash in you assets of wordpress theme",
   "license": "MIT",
   "repository": "raulghm/gulp-wp-rev",

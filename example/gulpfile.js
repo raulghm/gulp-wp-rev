@@ -6,12 +6,18 @@ var wpRev = require('gulp-wp-rev');
 
 gulp.task('rev', function () {
 	gulp.src('./wp-content/themes/raulghm-theme/lib/scripts.php')
-	.pipe(wpRev({
-		css: 'src/styles/styles.css',
-		cssHandle: 'my_assets',
-		js: 'src/scripts/scripts.js',
-		jsHandle: 'my_assets'
-	}))
+	.pipe(wpRev([
+		{
+			handle: 'my_assets',
+			filename: 'src/styles/styles.css',
+			filetype: 'css'
+		},
+		{
+			handle: 'my_assets',
+			filename: 'src/scripts/scripts.js',
+			filetype: 'js',
+		}
+	]))
 	.pipe(gulp.dest('./wp-content/themes/raulghm-theme/lib'));
 });
 
