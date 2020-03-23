@@ -1,7 +1,6 @@
 # gulp-wp-rev
 <p align="left">
   <a href="https://www.npmjs.com/package/gulp-wp-rev"><img src="https://img.shields.io/npm/v/gulp-wp-rev.svg?style=flat-square"></a>
-  <a href="https://github.com/raulghm/gulp-wp-rev/stargazers"><img src="http://img.shields.io/npm/dm/gulp-wp-rev.svg?style=flat-square"></a>
 </p>
 
 > gulp-wp-rev plugin for [gulp](https://github.com/gulpjs/gulp)
@@ -26,7 +25,7 @@ npm install --save-dev gulp-wp-rev
 var wpRev = require('gulp-wp-rev');
 
 gulp.task('rev', function() {
-	gulp.src('./wp-content/themes/raulghm-theme/lib/scripts.php')
+	gulp.src('./wp-content/themes/my-wordpress-theme/lib/scripts.php')
 	.pipe(wpRev([
 		{
 			handle: 'my-styles',
@@ -44,7 +43,7 @@ gulp.task('rev', function() {
 			type: 'js'
 		},
 	]))
-	.pipe(gulp.dest('./wp-content/themes/raulghm-theme/lib'));
+	.pipe(gulp.dest('./wp-content/themes/my-wordpress-theme/lib'));
 });
 ```
 # Configuration
