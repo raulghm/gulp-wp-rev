@@ -1,6 +1,6 @@
 # gulp-wprev
 <p align="left">
-  <a href="https://www.npmjs.com/package/gulp-wprev"><img src="https://img.shields.io/npm/v/gulp-wprev.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@vheemstra/gulp-wprev"><img src="https://img.shields.io/npm/v/@vheemstra/gulp-wprev.svg?style=flat-square"></a>
 </p>
 
 > gulp-wprev plugin for [gulp](https://github.com/gulpjs/gulp)
@@ -16,13 +16,13 @@ Revisioning CSS/JS appending a hash in you assets of WordPress theme.
 1. First, install `gulp-wprev` as a development dependency:
 
 ```shell
-npm install --save-dev gulp-wprev
+npm install --save-dev @vheemstra/gulp-wprev
 ```
 
 2. Then, add it to your `gulpfile.js`:
 
 ```javascript
-var wpRev = require('gulp-wprev');
+var wpRev = require('@vheemstra/gulp-wprev');
 
 gulp.task('rev', function() {
 	gulp.src('./wp-content/themes/my-wordpress-theme/lib/scripts.php')
