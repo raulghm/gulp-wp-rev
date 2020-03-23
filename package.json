@@ -12,6 +12,9 @@
     "email": "vanheemstra@gmail.com",
     "url": "https://github.com/vheemstra"
   },
+  "bugs": {
+    "url": "https://github.com/vHeemstra/gulp-wprev/issues"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
