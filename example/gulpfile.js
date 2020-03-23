@@ -5,7 +5,7 @@ var runSequence = require('run-sequence');
 var wpRev = require('gulp-wp-rev');
 
 gulp.task('rev', function () {
-	gulp.src('./wp-content/themes/raulghm-theme/lib/scripts.php')
+	gulp.src('./wp-content/themes/my-wordpress-theme/lib/scripts.php')
 	.pipe(wpRev([
 		{
 			handle: 'my_assets',
@@ -18,7 +18,7 @@ gulp.task('rev', function () {
 			filetype: 'js',
 		}
 	]))
-	.pipe(gulp.dest('./wp-content/themes/raulghm-theme/lib'));
+	.pipe(gulp.dest('./wp-content/themes/my-wordpress-theme/lib'));
 });
 
 gulp.task('build', function (callback) {
