@@ -2,7 +2,7 @@
 
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
-var wpRev = require('gulp-wp-rev');
+var wpRev = require('gulp-wprev');
 
 gulp.task('rev', function () {
 	gulp.src('./wp-content/themes/my-wordpress-theme/lib/scripts.php')

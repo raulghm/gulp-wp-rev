@@ -11,7 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-wp-rev": "^0.2.0",
+    "gulp-wprev": "^1.1.0",
     "run-sequence": "^1.1.5"
   }
 }

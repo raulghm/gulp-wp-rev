@@ -1,11 +1,11 @@
 {
-  "name": "gulp-wp-rev",
+  "name": "gulp-wprev",
   "version": "1.1.0",
   "description": "Revisioning CSS/JS appending a hash in you assets of WordPress theme",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vHeemstra/gulp-wp-rev.git"
+    "url": "https://github.com/vHeemstra/gulp-wprev.git"
   },
   "author": {
     "name": "vheemstra",

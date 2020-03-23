@@ -19,7 +19,7 @@ module.exports = function (options) {
     }
 
     if (file.isStream()) {
-      cb(new gutil.PluginError('gulp-wp-rev', 'Streaming not supported'));
+      cb(new gutil.PluginError('gulp-wprev', 'Streaming not supported'));
       return;
     }
 
