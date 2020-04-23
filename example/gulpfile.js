@@ -2,17 +2,23 @@
 
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
-var wpRev = require('gulp-wp-rev');
+var wpRev = require('@vheemstra/gulp-wprev');
 
 gulp.task('rev', function () {
-	gulp.src('./wp-content/themes/raulghm-theme/lib/scripts.php')
-	.pipe(wpRev({
-		css: 'src/styles/styles.css',
-		cssHandle: 'my_assets',
-		js: 'src/scripts/scripts.js',
-		jsHandle: 'my_assets'
-	}))
-	.pipe(gulp.dest('./wp-content/themes/raulghm-theme/lib'));
+	gulp.src('./wp-content/themes/my-wordpress-theme/lib/scripts.php')
+	.pipe(wpRev([
+		{
+			handle: 'my_assets',
+			filename: 'src/styles/styles.css',
+			filetype: 'css'
+		},
+		{
+			handle: 'my_assets',
+			filename: 'src/scripts/scripts.js',
+			filetype: 'js',
+		}
+	]))
+	.pipe(gulp.dest('./wp-content/themes/my-wordpress-theme/lib'));
 });
 
 gulp.task('build', function (callback) {
